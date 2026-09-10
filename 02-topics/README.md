@@ -37,6 +37,8 @@ docker exec -it kafka-1 /opt/kafka/bin/kafka-topics.sh \
   --bootstrap-server kafka-1:9092
 ```
 
+<img width="1630" height="211" alt="1" src="https://github.com/user-attachments/assets/8897bf7d-bba6-470c-abe0-79701b935292" />
+
 ## 4. Verify Topic Configuration
 ```bash
 docker exec -it kafka-1 /opt/kafka/bin/kafka-configs.sh \
