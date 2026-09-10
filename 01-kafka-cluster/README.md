@@ -23,7 +23,7 @@ Prerequisites
 - Docker Compose
 - Linux / WSL2
 - Apache Kafka
-
+```
 1.Start Kafka Cluster
 ```
 docker compose up -d
