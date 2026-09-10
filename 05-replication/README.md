@@ -21,6 +21,7 @@ docker exec -it kafka-1 /opt/kafka/bin/kafka-topics.sh \h \
   --topic order-created \
   --bootstrap-server kafka-1:9092
 ```
+<img width="1630" height="211" alt="1" src="https://github.com/user-attachments/assets/753a22d9-8deb-45e1-986a-115089db6302" />
 
 # Understanding the output
 - Leader - Broker currently handling reads and writes for the partition.
@@ -46,6 +47,8 @@ Check the containers
 ```bash
 docker ps -a
 ```
+<img width="1607" height="88" alt="kafka3down" src="https://github.com/user-attachments/assets/fd4f2750-ea3e-4717-80bc-bdd6e57a6017" />
+
 Describe the topic again
 ```bash
 docker exec -it kafka-1 /opt/kafka/bin/kafka-topics.sh \h \
@@ -54,6 +57,7 @@ docker exec -it kafka-1 /opt/kafka/bin/kafka-topics.sh \h \
   --bootstrap-server kafka-1:9092
 ```
 Check the topics of before and after down the kafka-3
+<img width="1507" height="185" alt="afterkafka3down" src="https://github.com/user-attachments/assets/2b2e6d67-f75a-4e93-8d7e-53c908c62618" />
 
 ## 4. Verify Writes with 2 ISR
 
@@ -70,6 +74,7 @@ docker exec -it kafka-2 /opt/kafka/bin/kafka-topics.sh \
   --topic order-created \ 
   --bootstrap-server kafka-2:9092
 ```
+<img width="1892" height="418" alt="error" src="https://github.com/user-attachments/assets/40481727-4599-4060-a3c0-7a19046c993c" />
 
 ## 6. Recover the failed Brokers
 ```bash
@@ -85,6 +90,7 @@ docker exec -it kafka-1 /opt/kafka/bin/kafka-topics.sh \h \
   --topic order-created \
   --bootstrap-server kafka-1:9092
 ```
+<img width="1701" height="113" alt="final" src="https://github.com/user-attachments/assets/c253aa39-d265-4c92-966b-7fbc53c56659" />
 
 # Summary
 THis lab demonstrated Kafka replication and broker failure recovery.
