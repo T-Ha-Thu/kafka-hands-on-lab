@@ -26,15 +26,7 @@ In Terminal (2)
 
 ## Message Flow
 
-Kafka Producer
-      |
-      | Message
-      v
-order-created Topic
-      |
-      | Message
-      v
-Kafka Consumer
+Kafka Producer --(Message)--> order-created Topic --(Message)--> Kafka Consumer
 
 ## Key Concepts
 - Producer — Sends messages to Kafka.
