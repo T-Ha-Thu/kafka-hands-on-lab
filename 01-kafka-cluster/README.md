@@ -20,52 +20,52 @@ Deploy and verify a 3-broker Apache Kafka cluster using Docker Compose.
 
 ```
 ## 1. Start Kafka Cluster
-```
+```bash
 docker compose up -d
 ```
 
 ## 2. Check Running Containers
-```
+```bash
 docker compose ps
 ```
 
 ## 3. Check Container Logs
-```
+```bash
 docker logs kafka-1
 docker logs kafka-2
 docker logs kafka-3
 ```
 
 ## 4. Verify Kafka Broker Connectivity
-```
+```bash
 docker exec -it kafka-1 /opt/kafka/bin/kafka-broker-api-versions.sh --bootstrap-server kafka-1:9092
 ```
 
 ## 5. Check Kafka Cluster
-```
+```bash
 docker exec -it kafka-1 /opt/kafka/bin/kafka-metadata-quorum.sh \
   --bootstrap-server kafka-1:9092 \
   describe --status
 ```
 
 ## 6. Check kafka Processes
-```
+```bash
 docker exec -it kafka-1 ps aux
 ```
 
 ## 7. Check Kafka Port
-```
+```bash
 docker exec -it kafka-1 \
   bash -c 'nc -zv kafka-1 9092'
 ```
 
 ## 8. Stop Kafka Cluster
-```
+```bash
 docker compose down
 ```
 
 ## 9. Restart kafka Cluster
-```
+```bash
 docker compose up -d
 docker compose ps
 ```
