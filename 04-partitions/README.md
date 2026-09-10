@@ -13,6 +13,8 @@ docker exec -it kafka-1 /opt/kafka/bin/kafka-topics.sh \
   --bootstrap-server kafka-1:9092
 ```
 
+<img width="1630" height="211" alt="1" src="https://github.com/user-attachments/assets/38515689-3c55-471c-94ee-b77a91a9289f" />
+
 ## 2. Produce Messages ( Terminal 0 ) ( Round-Robin Partitioner ) 
 ```bash
 docker exec -it kafka-1 /opt/kafka/bin/kafka-console-producer.sh \
@@ -20,6 +22,8 @@ docker exec -it kafka-1 /opt/kafka/bin/kafka-console-producer.sh \
   --bootstrap-server kafka-1:9092 \
   --producer-property partitioner.class=org.apache.kafka.clients.producer.RoundRobinPartitioner
 ```
+
+<img width="1065" height="220" alt="4" src="https://github.com/user-attachments/assets/350fb64a-1fcb-476c-84e9-11b193a77ac3" />
 
 ## 3. Consume Messages from Each Partition
 
@@ -31,6 +35,7 @@ docker exec -it kafka-2 /opt/kafka/bin/kafka-console-consumer.sh \h \
   --partition 0 \
   --from-beginning
 ```
+<img width="1082" height="316" alt="partition0" src="https://github.com/user-attachments/assets/88aee5c9-9785-4e59-a93c-e31a3651c860" />
 
 For Partition 1 ( Terminal 2 )
 ```bash
@@ -40,6 +45,7 @@ docker exec -it kafka-2 /opt/kafka/bin/kafka-console-consumer.sh \
   --partition 1 \
   --from-beginning
 ```
+<img width="1056" height="337" alt="partition1" src="https://github.com/user-attachments/assets/eaa8da24-43cc-4d2c-a333-85697cdf3e25" />
 
 For Partition 2 ( Terminal 3 ) 
 ```bash
@@ -49,6 +55,7 @@ docker exec -it kafka-2 /opt/kafka/bin/kafka-console-consumer.sh \
   --partition 2 \
   --from-beginning
 ```
+<img width="1052" height="532" alt="partition2" src="https://github.com/user-attachments/assets/c9b04dfd-2fbb-4504-98c3-94ea9d0f8c3b" />
 
 ## Summary
 In this lab,
